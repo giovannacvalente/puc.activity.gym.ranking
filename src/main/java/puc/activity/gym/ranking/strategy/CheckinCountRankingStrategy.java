@@ -13,7 +13,7 @@ public class CheckinCountRankingStrategy implements RankingStrategy {
     public Map<String, Long> generateRanking(List<WorkoutResponse> workouts) {
         return workouts.stream()
                 .collect(Collectors.groupingBy(
-                        WorkoutResponse::getUserId,
+                        WorkoutResponse::getUsername,
                         Collectors.counting()
                 ));
     }
