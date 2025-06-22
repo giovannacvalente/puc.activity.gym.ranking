@@ -19,7 +19,7 @@ public class RankingController {
     }
 
     @GetMapping
-    public Map<Long, Long> getRanking(@RequestParam RankingType type) {
+    public Map<String, Long> getRanking(@RequestParam RankingType type) {
         return rankingService.getRanking(type.name().toLowerCase());
     }
 }

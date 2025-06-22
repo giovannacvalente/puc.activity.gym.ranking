@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Component("duration")
 public class DurationRankingStrategy implements RankingStrategy {
     @Override
-    public Map<Long, Long> generateRanking(List<WorkoutResponse> workouts) {
+    public Map<String, Long> generateRanking(List<WorkoutResponse> workouts) {
         return workouts.stream()
                 .filter(w -> w.getDuration() != null)
                 .collect(Collectors.groupingBy(

@@ -21,14 +21,14 @@ public class RankingService {
         this.strategyFactory = strategyFactory;
     }
 
-    public Map<Long, Long> getRanking(String type) {
+    public Map<String, Long> getRanking(String type) {
         List<WorkoutResponse> workouts = workoutClient.getWorkouts();
         RankingStrategy strategy = strategyFactory.getStrategy(type);
-        Map<Long, Long> rawRanking = strategy.generateRanking(workouts);
+        Map<String, Long> rawRanking = strategy.generateRanking(workouts);
 
         
         return rawRanking.entrySet().stream()
-                .sorted(Map.Entry.<Long, Long>comparingByValue().reversed())
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .collect(LinkedHashMap::new,
                         (m, e) -> m.put(e.getKey(), e.getValue()),
                         LinkedHashMap::putAll);

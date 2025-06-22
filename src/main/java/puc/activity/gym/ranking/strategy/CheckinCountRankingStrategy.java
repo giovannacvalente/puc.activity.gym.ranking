@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Component("checkins")
 public class CheckinCountRankingStrategy implements RankingStrategy {
     @Override
-    public Map<Long, Long> generateRanking(List<WorkoutResponse> workouts) {
+    public Map<String, Long> generateRanking(List<WorkoutResponse> workouts) {
         return workouts.stream()
                 .collect(Collectors.groupingBy(
                         WorkoutResponse::getUserId,

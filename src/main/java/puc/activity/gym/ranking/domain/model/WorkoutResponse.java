@@ -4,7 +4,7 @@ import java.time.Duration;
 
 public class WorkoutResponse {
     private Long workoutId;
-    private Long userId;
+    private String userId;
     private Duration duration;
 
     
@@ -16,11 +16,11 @@ public class WorkoutResponse {
         this.workoutId = workoutId;
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
