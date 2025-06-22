@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface RankingStrategy {
-    Map<Long, Long> generateRanking(List<WorkoutResponse> workouts);
+    Map<String, Long> generateRanking(List<WorkoutResponse> workouts);
 }
